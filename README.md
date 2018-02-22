@@ -14,7 +14,7 @@ The OCI collectd write plugin is a publishing extension for [collectd](https://c
    - SUSE Linux Enterprise Server 12
 
 ## Installation
- * Download [installation script](https://raw.githubusercontent.com/peter-z-xu/collectd-oci/master/src/setup.py), place it on the host and execute it:
+ * Download [installation script](https://raw.githubusercontent.com/NetApp/OCI_collectd/master/src/setup.py), place it on the host and execute it:
 ```
 chmod +x setup.py
 sudo ./setup.py
@@ -23,6 +23,14 @@ sudo ./setup.py
  * Follow on screen instructions
 
 ## Configuration
+
+### OCI token configuration
+
+Running the following command will return a token for you to configure collectd.
+
+```
+curl -k -XPOST --data '{"description": "Collectd OCI integration", "integrations": ["*"]}' -H 'Content-Type: application/json' -uadmin:admin123 https://[OCI server]/rest/v1/integrationAgents
+```
 
 ### Plugin specific configuration
 The default location of the configuration file used by collectd-oci plugin is: `/etc/collectd.d/oci.conf`. This file allows modification of the following parameters:
@@ -86,7 +94,7 @@ grep "[NetAppOnCommandInsightPlugin]" /var/log/collectd_oci.log
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017. All Rights Reserved.
+Copyright (c) 2018. All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
