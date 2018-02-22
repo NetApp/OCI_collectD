@@ -18,7 +18,7 @@ ZYPPER_INSTALL_COMMAND = 'zypper --non-interactive install '
 PYTHON_PACKAGES = ['requests']
 COLLECTD_OCI_PLUGIN_URL = 'https://github.com/NetApp/OCI_collectd/archive/master.zip'
 DOWNLOADED_PLUGIN_ZIP_FILE = TEMP_DIRECTORY + '/collectd-oci-master.zip'
-PLUGIN_UNZIPPED_DIRECTORY = TEMP_DIRECTORY + '/collectd-oci-master'
+PLUGIN_UNZIPPED_DIRECTORY = TEMP_DIRECTORY + '/OCI_collectd-master'
 DOWNLOAD_COLLECTD_OCI_PLUGIN_COMMAND = 'curl --silent --location  --output ' \
                                        + DOWNLOADED_PLUGIN_ZIP_FILE + ' ' + COLLECTD_OCI_PLUGIN_URL
 EPEL_RELEASE_7_RPM = 'http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm'
