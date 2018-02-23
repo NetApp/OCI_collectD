@@ -106,7 +106,7 @@ grep "[NetAppOnCommandInsightPlugin]" /var/log/collectd_oci.log
 ## Contributing
 
 1. Create your fork by clicking Fork button on top of the page.
-2. Download your repository: `git clone https://github.com/USER/collectd-oci.git`
+2. Download your repository: `git clone https://github.com/NetApp/OCI_collectd.git`
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'My new feature description'`
 4. Push to the branch: `git push origin my-new-feature`
