@@ -16,20 +16,41 @@ The OCI collectd write plugin is a publishing extension for [collectd](https://c
 ## Installation
  * Download [installation script](https://raw.githubusercontent.com/NetApp/OCI_collectd/master/src/setup.py), place it on the host and execute it:
 ```
+wget https://raw.githubusercontent.com/NetApp/OCI_collectd/master/src/setup.py
 chmod +x setup.py
-sudo ./setup.py
+sudo ./setup.py --host-name <OCI server> --token <token>
 ```
 
- * Follow on screen instructions
+ * For more details
+
+```
+sudo ./setup.py --help
+```
 
 ## Configuration
 
 ### OCI token configuration
 
-Running the following command will return a token for you to configure collectd.
+ * Running the following command will return a token for you to configure collectd.
 
 ```
-curl -k -XPOST --data '{"description": "Collectd OCI integration", "integrations": ["*"]}' -H 'Content-Type: application/json' -uadmin:admin123 https://[OCI server]/rest/v1/integrationAgents
+curl -k -XPOST --data '{"description": "Collectd OCI integration", "integrations": ["*"]}' -H 'Content-Type: application/json' -u<username>:<password> https://<OCI server>/rest/v1/integrationAgents
+```
+
+ * Save the token from the JSON output as --token parameter to setup.py installaion script.
+
+```
+{
+  "tokenId": "c32526dc-6573-42e5-ad6c-cbe6ff808800",
+  "self": "/rest/v1/integrationAgents/c32526dc-6573-42e5-ad6c-cbe6ff808800",
+  "description": "Collectd OCI integration",
+  "lastReportedTime": "1970-01-01T00:00:00+0000",
+  "integrations": 
+  [
+    "*"
+  ],
+  "createdTime": "2018-02-22T05:59:43+0000"
+}
 ```
 
 ### Plugin specific configuration
